@@ -98,7 +98,7 @@ namespace Probleme_Fundamentele_Programarii
             int[] poz = new int[100];
             for (int i = 0; i < n; i++)
             {
-                v[i] = int.Parse(t[i]);
+                v[i] = int.Parse(t[i]); // citim vectorul
                 poz[v[i]] = i;  // punem in vectorul poz nr de ordine a fiecarui copil
             }
 
