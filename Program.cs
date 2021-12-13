@@ -55,7 +55,7 @@ namespace Probleme_Fundamentele_Programarii
             //P42();
             //P43();
             //P44();
-            P45();
+            //P45();
             //P46();
             //P47();
             //P48();
