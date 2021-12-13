@@ -55,7 +55,7 @@ namespace Probleme_Fundamentele_Programarii
             //P42();
             //P43();
             //P44();
-            //P45();
+            P45();
             //P46();
             //P47();
             //P48();
@@ -854,9 +854,9 @@ namespace Probleme_Fundamentele_Programarii
             }
             Console.WriteLine();
             Console.Write("Elementele inversate ale tabloului sunt: ");
-            for (int i = 0; i < n; i++)
+            for (int i = n - 1; i >= 0; i--)
             {
-                Console.Write($"1/{v[i]} ");
+                Console.Write($"{v[i]} ");
             }
             Console.WriteLine();
         }
