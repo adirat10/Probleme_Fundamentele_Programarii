@@ -89,31 +89,43 @@ namespace Probleme_Fundamentele_Programarii
         private static void P69()
         {
             int n;
-            Console.Write("n= ");
+            Console.Write("n=");
             n = int.Parse(Console.ReadLine());
+
+            Console.Write($"Cele {n} numre sunt: ");
+
             string line = Console.ReadLine();
-            char[] sep = { ' ', ',', '\n', '\t', '\r' };
+            char[] sep = { ' ', '\n', '\t', '\r' };
             string[] t = line.Split(sep, StringSplitOptions.RemoveEmptyEntries);
+
             int[] v = new int[100];
-            int[] poz = new int[100];
+
             for (int i = 0; i < n; i++)
             {
-                v[i] = int.Parse(t[i]); // citim vectorul
-                poz[v[i]] = i;  // punem in vectorul poz nr de ordine a fiecarui copil
+                v[i] = int.Parse(t[i]); // citim cele n inaltimi
             }
 
-            // aranjam vectorul in ordine crescatoare
-            for (int i = 0; i < n - 1; i++)
-                for (int j = i + 1; j < n; j++)
-                    if (v[i] > v[j])
+            int minv,poz;
+
+            for (int j = 0; j < n; j++)
+            {
+                minv = int.MaxValue;
+                poz = -1;
+                for (int i = 0; i < n; i++)
+                {
+                    if (v[i] < minv)
                     {
-                        int aux = v[i];
-                        v[i] = v[j];
-                        v[j] = aux;
+                        minv = v[i]; // Aflam minimul din vector
+                        poz = i;  // poz este pozitia elementului minim
                     }
-            // afisam nr de ordine a copiilor in ordine crescatoare a inaltimii
-            for (int i = 0; i < n; i++)
-                Console.Write($"{poz[v[i]]} ");
+                }
+                if (poz != -1)
+                {
+                    Console.Write($"{poz + 1} "); // Afisam pozitia minimului
+                    v[poz] = int.MaxValue;  //Punem pe pozitia minimului o valoare mare pentru a afla urmatorul minim
+                }
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
