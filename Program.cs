@@ -775,8 +775,9 @@ namespace Probleme_Fundamentele_Programarii
                 for (j = 1; j <= n; j++)
                 {
                     c[i, j] = a[i, j] + b[i, j];
-                    Console.WriteLine(c[i, j]);
+                    Console.Write($"{c[i, j]} ");
                 }
+                Console.WriteLine();
             }
         }
 
